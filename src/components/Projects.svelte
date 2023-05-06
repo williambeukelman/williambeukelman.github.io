@@ -82,7 +82,7 @@
   import { scale } from "svelte/transition";
   import { projects } from "../stores.js";
   import { skill } from "../stores.js";
-  import { icons } from "../stores.js";
+  import { skills } from "../stores.js";
   let screenshot_paper = "/assets/screenshot_paper.png";
   
   $: filterProjects =
@@ -104,7 +104,7 @@
       <div class="card mb-4" transition:scale|local>
         <div class="langs">
         {#if project.badges}{#each project.badges as badge} 
-          <img class="language-badge" src="{$icons[badge]}" alt="{badge}-logo" />
+          <img class="language-badge" src="{$skills[badge].icon}" alt="{badge}-logo" />
         {/each}{/if}
         </div>
         <img class="card-img-top" src="{project.image}" alt="project">

@@ -1,92 +1,6 @@
 <script>
   import { skill } from "../stores.js";
-  import { icons } from "../stores.js";
-  let skills = [
-    {
-      name: "Svelte",
-      btn: true,
-    },
-    {
-      name: "Vue",
-      btn: true,
-    },
-    {
-      name: "Bootstrap",
-      btn: true,
-    },
-    {
-      name: "Csharp",
-      btn: false,
-    },
-    {
-      name: "Flask",
-      btn: false,
-    },
-    {
-      name: "Git",
-      btn: false,
-    },
-    {
-      name: "Javascript",
-      btn: true,
-    },
-    {
-      name: "Jquery",
-      btn: true,
-    },
-    {
-      name: "Linux",
-      btn: false,
-    },
-    {
-      name: "Python",
-      btn: false,
-    },
-    {
-      name: "Arduino",
-      btn: false,
-    },
-    {
-      name: "PHP",
-      btn: false,
-    },
-    {
-      name: "SQL",
-      btn: false,
-    },
-    {
-      name: "React-Native",
-      btn: false,
-    },
-    {
-      name: "Docker",
-      btn: false,
-    },
-    {
-      name: "ASP.NET",
-      btn: false,
-    },
-    {
-      name: "ExpressJS",
-      btn: false,
-    },
-    {
-      name: "Mongodb",
-      btn: false,
-    },
-    {
-      name: "NodeJS",
-      btn: false,
-    },
-    {
-      name: "Selenium",
-      btn: false,
-    },
-    {
-      name: "Unity",
-      btn: false,
-    },
-  ];
+  import { skills } from "../stores.js";
   function updateSkill(value) {
     skill.set(value);
   }
@@ -111,21 +25,22 @@
   </div>
   <div class="row skill-icons">
     <div class="d-flex gap-3 flex-wrap justify-content-center">
-      {#each skills as skill}
+      {#each Object.entries($skills) as [name, skill]}
         <button
           type="button"
-          disabled={!skill.btn}
+          disabled={(skill.count<1)}
           class="btn btn-outline-dark"
           on:click={() => {
-            updateSkill(skill.name);
+            updateSkill(name);
             scroll();
           }}
         >
           <div class="skill-card">
-            {#if $icons[skill.name]}
-              <img src={$icons[skill.name]} alt="{skill.name}-logo" />
+            {#if skill.icon}
+              <img src={skill.icon} alt="{name}-logo" />
             {/if}
-            <span class="badge bg-dark">{skill.name}</span>
+            <span class="badge bg-dark">{name}</span>
+            <!-- <span class="badge bg-dark">{skill.count}</span> -->
           </div>
         </button>
       {/each}

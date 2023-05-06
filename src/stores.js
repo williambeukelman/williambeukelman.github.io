@@ -1,7 +1,6 @@
 import { writable } from "svelte/store";
 
-export const skill = writable("");
-export const projects = writable([
+const projectData = [
   {
     title: "Music Library Application",
     desc:
@@ -71,48 +70,116 @@ export const projects = writable([
     image: "",
     badges: ["Python", "Flask", "Javascript"]
   }
-]);
-export const icons = writable({
+]
+
+const skillData = {
   "Svelte":
-    "public/svelte-original.svg",
+  {
+    icon: "public/svelte-original.svg",
+    count: projectData.filter((e) => e.badges.includes("Svelte")).length,
+  },
   "Vue":
-    "public/vuejs-original.svg",
+  {
+    icon: "public/vuejs-original.svg",
+    count: projectData.filter((e) => e.badges.includes("Vue")).length,
+  },
   "Bootstrap":
-    "public/bootstrap-original.svg",
+  {
+    icon: "public/bootstrap-original.svg",
+    count: projectData.filter((e) => e.badges.includes("Bootstrap")).length,
+  },
   "Csharp":
-    "public/csharp-original.svg",
+  {
+    icon: "public/csharp-original.svg",
+    count: projectData.filter((e) => e.badges.includes("Csharp")).length,
+  },
   "Flask":
-    "public/flask-original.svg",
+  {
+    icon: "public/flask-original.svg",
+    count: projectData.filter((e) => e.badges.includes("Flask")).length,
+  },
   "Git":
-    "public/git-original.svg",
+  {
+    icon: "public/git-original.svg",
+    count: projectData.filter((e) => e.badges.includes("Git")).length,
+  },
   "Javascript":
-    "public/javascript-original.svg",
+  {
+    icon: "public/javascript-original.svg",
+    count: projectData.filter((e) => e.badges.includes("Javascript")).length,
+  },
   "Jquery":
-    "public/jquery-original.svg",
+  {
+    icon: "public/jquery-original.svg",
+    count: projectData.filter((e) => e.badges.includes("Jquery")).length,
+  },
   "Linux":
-    "public/linux-plain.svg",
+  {
+    icon: "public/linux-plain.svg",
+    count: projectData.filter((e) => e.badges.includes("Linux")).length,
+  },
   "Python":
-    "public/python-original.svg",
+  {
+    icon: "public/python-original.svg",
+    count: projectData.filter((e) => e.badges.includes("Python")).length,
+  },
   "Arduino":
-    "public/arduino-original.svg",
+  {
+    icon: "public/arduino-original.svg",
+    count: projectData.filter((e) => e.badges.includes("Arduino")).length,
+  },
   "PHP":
-    "public/php-original.svg",
+  {
+    icon: "public/php-original.svg",
+    count: projectData.filter((e) => e.badges.includes("PHP")).length,
+  },
   "SQL":
-    "public/mysql-original.svg",
+  {
+    icon: "public/mysql-original.svg",
+    count: projectData.filter((e) => e.badges.includes("SQL")).length,
+  },
   "React-Native":
-    "public/react-original.svg",
+  {
+    icon: "public/react-original.svg",
+    count: projectData.filter((e) => e.badges.includes("React-Native")).length,
+  },
   "Docker":
-    "public/docker-original.svg",
+  {
+    icon: "public/docker-original.svg",
+    count: projectData.filter((e) => e.badges.includes("Docker")).length,
+  },
   "ASP.NET":
-    "public/dot-net-original.svg",
+  {
+    icon: "public/dot-net-original.svg",
+    count: projectData.filter((e) => e.badges.includes("ASP.NET")).length,
+  },
   "ExpressJS":
-    "public/express-original.svg",
+  {
+    icon: "public/express-original.svg",
+    count: projectData.filter((e) => e.badges.includes("ExpressJS")).length,
+  },
   "Mongodb":
-    "public/mongodb-original.svg",
+  {
+    icon: "public/mongodb-original.svg",
+    count: projectData.filter((e) => e.badges.includes("Mongodb")).length,
+  },
   "NodeJS":
-    "public/nodejs-original.svg",
+  {
+    icon: "public/nodejs-original.svg",
+    count: projectData.filter((e) => e.badges.includes("NodeJS")).length,
+  },
   "Selenium":
-    "public/selenium-original.svg",
+  {
+    icon: "public/selenium-original.svg",
+    count: projectData.filter((e) => e.badges.includes("Selenium")).length,
+  },
   "Unity":
-    "public/unity-original.svg",
-});
+  {
+    icon: "public/unity-original.svg",
+    count: projectData.filter((e) => e.badges.includes("Unity")).length,
+  },
+}
+
+export const skill = writable("");
+export const projects = writable(projectData);
+export const skills = writable(skillData);
