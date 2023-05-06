@@ -1109,7 +1109,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (39:12) {#if skill.icon}
+    // (40:12) {#if skill.icon}
     function create_if_block$2(ctx) {
     	let img;
     	let img_src_value;
@@ -1140,7 +1140,7 @@ var app = (function () {
     	};
     }
 
-    // (28:6) {#each Object.entries($skills) as [name, skill]}
+    // (29:6) {#each Object.entries($skills).sort((a, b) => b[1].count - a[1].count) as [name, skill]}
     function create_each_block$2(ctx) {
     	let button;
     	let div;
@@ -1225,7 +1225,7 @@ var app = (function () {
     	let button;
     	let mounted;
     	let dispose;
-    	let each_value = Object.entries(/*$skills*/ ctx[0]);
+    	let each_value = Object.entries(/*$skills*/ ctx[0]).sort(func);
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -1280,7 +1280,7 @@ var app = (function () {
     		},
     		p(ctx, [dirty]) {
     			if (dirty & /*Object, $skills, updateSkill, scroll*/ 3) {
-    				each_value = Object.entries(/*$skills*/ ctx[0]);
+    				each_value = Object.entries(/*$skills*/ ctx[0]).sort(func);
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
@@ -1319,9 +1319,12 @@ var app = (function () {
     	el.scrollIntoView({ behavior: "smooth" });
     }
 
+    const func = (a, b) => b[1].count - a[1].count;
+
     function instance$3($$self, $$props, $$invalidate) {
     	let $skills;
     	component_subscribe($$self, skills, $$value => $$invalidate(0, $skills = $$value));
+    	console.log(Object.entries($skills));
 
     	function updateSkill(value) {
     		skill.set(value);

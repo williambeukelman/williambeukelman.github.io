@@ -1,6 +1,7 @@
 <script>
   import { skill } from "../stores.js";
   import { skills } from "../stores.js";
+  console.log(Object.entries($skills));
   function updateSkill(value) {
     skill.set(value);
   }
@@ -25,7 +26,7 @@
   </div>
   <div class="row skill-icons">
     <div class="d-flex gap-3 flex-wrap justify-content-center">
-      {#each Object.entries($skills) as [name, skill]}
+      {#each Object.entries($skills).sort((a, b) => b[1].count - a[1].count) as [name, skill]}
         <button
           type="button"
           disabled={(skill.count<1)}
@@ -40,7 +41,7 @@
               <img src={skill.icon} alt="{name}-logo" />
             {/if}
             <span class="badge bg-dark">{name}</span>
-            <!-- <span class="badge bg-dark">{skill.count}</span> -->
+            <!-- {#if skill.count>0}<span class="badge bg-secondary">{skill.count}</span>{/if} -->
           </div>
         </button>
       {/each}
