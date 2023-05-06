@@ -67,7 +67,7 @@ const projectData = [
     desc: "Myself and another student created this small Flask app as an internal tool for my college's research efforts as part of an internship.",
     demo: "",
     code: "",
-    image: "",
+    image: "public/screenshots/datacollect.png",
     badges: ["Python", "Flask", "Javascript"]
   }
 ]
