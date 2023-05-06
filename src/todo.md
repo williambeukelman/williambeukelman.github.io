@@ -6,5 +6,5 @@
 
 ## SKILLS:
 
-[ ] Add count next to each one with number of projects
-[ ] Check how many projects each skill has and grey out if none
+[x] Add count next to each one with number of projects
+[x] Check how many projects each skill has and grey out if none
