@@ -80,52 +80,15 @@
 
 <script>
   import { scale } from "svelte/transition";
+  import { projects } from "../stores.js";
   import { skill } from "../stores.js";
   import { icons } from "../stores.js";
   let screenshot_paper = "/assets/screenshot_paper.png";
-  let projects = [
-    {
-      title: "Music Library Application",
-      desc:
-        "A simple mock music library and player coded in Vue3, HTML, CSS, and JS.",
-      demo: "https://v62igf.csb.app/artist",
-      code: "https://github.com/williambeukelman/Music-Library-App",
-      image:
-        "https://camo.githubusercontent.com/ad0810c98f921ee6571c2274ea4398eb022877d97642ea0b974dd482b16db718/68747470733a2f2f77696c6c69616d6265756b656c6d616e2e6769746875622e696f2f6d757369632d706c617965722d616c62756d732e706e67",
-      badges: ["Vue", "Bootstrap"]
-    },
-    {
-      title: "Recyclical Energy",
-      desc:
-        "A mock business website I designed and coded using Bootstrap in a parallax style.",
-      demo: "https://owv4in.csb.app/",
-      code: "https://github.com/williambeukelman/Recyclical-Energy-Website/",
-      image: "https://williambeukelman.github.io/energy-home.png",
-      badges: ["Bootstrap"]
-    },
-    {
-      title: "Twenty Letter Wordle",
-      desc:
-        "A Svelte application intended to mimic the game of Wordle but with a much longer letter count",
-      demo: "https://s9o1y6.csb.app/",
-      code: "https://github.com/williambeukelman/Twenty-Letter-Wordle/",
-      image:
-        "https://williambeukelman.github.io/screenshot-twenty-letter-wordle.png",
-      badges: ["Svelte"]
-    },
-    {
-      title: "Sycamore Nursery Website",
-      desc: "A fictional nursery website made in javascript and jquery.",
-      demo: "https://rgx9lb.csb.app/",
-      code: "https://codesandbox.io/s/rgx9lb",
-      image: "https://williambeukelman.github.io/screenshot-nursery-website.png",
-      badges: ["Javascript", "Jquery"]
-    }
-  ];
+  
   $: filterProjects =
     $skill === ""
-      ? projects
-      : projects.filter(item => {
+      ? $projects
+      : $projects.filter(item => {
           return item.badges.includes($skill);
           /*.some(badge => {
                       return badge === $skill;

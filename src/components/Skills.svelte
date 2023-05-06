@@ -75,7 +75,7 @@
       btn: false,
     },
     {
-      name: "NodeJs",
+      name: "NodeJS",
       btn: false,
     },
     {
