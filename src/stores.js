@@ -43,7 +43,7 @@ const projectData = [
     desc: "A multiplatform web app, storefront, and ecommerce adminstration tool built together with 9 other students as a capstone class.",
     demo: "https://thebikeshop.app",
     code: "https://github.com/CWI-SWDV-280-Bike-Shop/Bike-Shop",
-    image: "",
+    image: "public/screenshots/screenshot_thebikeshop.png",
     badges: ["React-Native", "Mongodb", "Javascript", "ExpressJS", "Docker", "NodeJS"]
   },
   {
@@ -51,7 +51,7 @@ const projectData = [
     desc: "Final for game development class, a 3D real-time strategy space exploration game built entirely from stratch using Unity game engine.",
     demo: "https://play.unity.com/mg/other/build-km4",
     code: "",
-    image: "",
+    image: "public/screenshots/screenshot_stellar_explorers.png",
     badges: ["Csharp", "Unity"]
   },
   {
@@ -59,7 +59,7 @@ const projectData = [
     desc: "As part of an internship I made a tool to do web scraping, and report generation for intial data collection efforts for my college.",
     demo: "",
     code: "https://github.com/williambeukelman/python-company-stack-analysis",
-    image: "",
+    image: "public/screenshots/web_scraper.png",
     badges: ["Python", "Flask", "Selenium"]
   },
   {
@@ -181,5 +181,5 @@ const skillData = {
 }
 
 export const skill = writable("");
-export const projects = writable(projectData);
+export const projects = writable(projectData.reverse());
 export const skills = writable(skillData);
