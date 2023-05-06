@@ -12,7 +12,7 @@
     background: linear-gradient(to right, tomato, blueviolet);
   }
   .card {
-    max-width: 50rem;
+    max-width: min(95vw, 50rem);
   }
   .card-title {
     margin-left: 0;
@@ -67,27 +67,22 @@
 
 <div class="container pb-5" id="education">
   <h1 class="mb-4">Education & Certificates</h1>
-  <div class="row gap-2">
+  <div class="row gap-2 justify-content-center">
     {#each certificates as certificate}
       <div class="col-sm card">
         <div class="card-body">
+          <h5 class="card-title">
+            {#if certificate.type == 'award'}
+            <div class="icon">{@html award}</div>
+            {:else if certificate.type == 'degree'}
+            <div class="icon">{@html degree}</div>
+            {/if}
           {#if windowWidth > 640}
-          <h5 class="card-title">
-            {#if certificate.type == 'award'}
-            <div class="icon">{@html award}</div>
-            {:else if certificate.type == 'degree'}
-            <div class="icon">{@html degree}</div>
-            {/if}
-          {certificate.title}</h5>
+            {certificate.title}
           {:else}
-          <h5 class="card-title">
-            {#if certificate.type == 'award'}
-            <div class="icon">{@html award}</div>
-            {:else if certificate.type == 'degree'}
-            <div class="icon">{@html degree}</div>
-            {/if}
-          {certificate.short}</h5>
+            {certificate.short}
           {/if}
+          </h5>
           <h6 class="card-subtitle mb-2">{certificate.institution}</h6>
           <h6 class="card-subtitle mb-2 text-muted">{certificate.subtitle}</h6>
           <p class="card-text">{certificate.desc}</p>

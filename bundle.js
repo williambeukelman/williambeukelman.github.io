@@ -1673,138 +1673,14 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (82:10) {:else}
-    function create_else_block(ctx) {
-    	let h5;
-    	let t0;
-    	let t1_value = /*certificate*/ ctx[5].short + "";
-    	let t1;
-
-    	function select_block_type_2(ctx, dirty) {
-    		if (/*certificate*/ ctx[5].type == 'award') return create_if_block_3;
-    		if (/*certificate*/ ctx[5].type == 'degree') return create_if_block_4;
-    	}
-
-    	let current_block_type = select_block_type_2(ctx);
-    	let if_block = current_block_type && current_block_type(ctx);
-
-    	return {
-    		c() {
-    			h5 = element("h5");
-    			if (if_block) if_block.c();
-    			t0 = space();
-    			t1 = text(t1_value);
-    			attr(h5, "class", "card-title svelte-1iom95z");
-    		},
-    		m(target, anchor) {
-    			insert(target, h5, anchor);
-    			if (if_block) if_block.m(h5, null);
-    			append(h5, t0);
-    			append(h5, t1);
-    		},
-    		p(ctx, dirty) {
-    			if (if_block) if_block.p(ctx, dirty);
-    		},
-    		d(detaching) {
-    			if (detaching) detach(h5);
-
-    			if (if_block) {
-    				if_block.d();
-    			}
-    		}
-    	};
-    }
-
-    // (74:10) {#if windowWidth > 640}
-    function create_if_block(ctx) {
-    	let h5;
-    	let t0;
-    	let t1_value = /*certificate*/ ctx[5].title + "";
-    	let t1;
-
-    	function select_block_type_1(ctx, dirty) {
-    		if (/*certificate*/ ctx[5].type == 'award') return create_if_block_1;
-    		if (/*certificate*/ ctx[5].type == 'degree') return create_if_block_2;
-    	}
-
-    	let current_block_type = select_block_type_1(ctx);
-    	let if_block = current_block_type && current_block_type(ctx);
-
-    	return {
-    		c() {
-    			h5 = element("h5");
-    			if (if_block) if_block.c();
-    			t0 = space();
-    			t1 = text(t1_value);
-    			attr(h5, "class", "card-title svelte-1iom95z");
-    		},
-    		m(target, anchor) {
-    			insert(target, h5, anchor);
-    			if (if_block) if_block.m(h5, null);
-    			append(h5, t0);
-    			append(h5, t1);
-    		},
-    		p(ctx, dirty) {
-    			if (if_block) if_block.p(ctx, dirty);
-    		},
-    		d(detaching) {
-    			if (detaching) detach(h5);
-
-    			if (if_block) {
-    				if_block.d();
-    			}
-    		}
-    	};
-    }
-
-    // (86:51) 
-    function create_if_block_4(ctx) {
-    	let div;
-
-    	return {
-    		c() {
-    			div = element("div");
-    			attr(div, "class", "icon svelte-1iom95z");
-    		},
-    		m(target, anchor) {
-    			insert(target, div, anchor);
-    			div.innerHTML = /*degree*/ ctx[3];
-    		},
-    		p: noop,
-    		d(detaching) {
-    			if (detaching) detach(div);
-    		}
-    	};
-    }
-
-    // (84:12) {#if certificate.type == 'award'}
-    function create_if_block_3(ctx) {
-    	let div;
-
-    	return {
-    		c() {
-    			div = element("div");
-    			attr(div, "class", "icon svelte-1iom95z");
-    		},
-    		m(target, anchor) {
-    			insert(target, div, anchor);
-    			div.innerHTML = /*award*/ ctx[2];
-    		},
-    		p: noop,
-    		d(detaching) {
-    			if (detaching) detach(div);
-    		}
-    	};
-    }
-
-    // (78:51) 
+    // (77:51) 
     function create_if_block_2(ctx) {
     	let div;
 
     	return {
     		c() {
     			div = element("div");
-    			attr(div, "class", "icon svelte-1iom95z");
+    			attr(div, "class", "icon svelte-ep14h");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -1817,14 +1693,14 @@ var app = (function () {
     	};
     }
 
-    // (76:12) {#if certificate.type == 'award'}
+    // (75:12) {#if certificate.type == 'award'}
     function create_if_block_1(ctx) {
     	let div;
 
     	return {
     		c() {
     			div = element("div");
-    			attr(div, "class", "icon svelte-1iom95z");
+    			attr(div, "class", "icon svelte-ep14h");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -1833,6 +1709,44 @@ var app = (function () {
     		p: noop,
     		d(detaching) {
     			if (detaching) detach(div);
+    		}
+    	};
+    }
+
+    // (82:10) {:else}
+    function create_else_block(ctx) {
+    	let t_value = /*certificate*/ ctx[5].short + "";
+    	let t;
+
+    	return {
+    		c() {
+    			t = text(t_value);
+    		},
+    		m(target, anchor) {
+    			insert(target, t, anchor);
+    		},
+    		p: noop,
+    		d(detaching) {
+    			if (detaching) detach(t);
+    		}
+    	};
+    }
+
+    // (80:10) {#if windowWidth > 640}
+    function create_if_block(ctx) {
+    	let t_value = /*certificate*/ ctx[5].title + "";
+    	let t;
+
+    	return {
+    		c() {
+    			t = text(t_value);
+    		},
+    		m(target, anchor) {
+    			insert(target, t, anchor);
+    		},
+    		p: noop,
+    		d(detaching) {
+    			if (detaching) detach(t);
     		}
     	};
     }
@@ -1841,80 +1755,104 @@ var app = (function () {
     function create_each_block(ctx) {
     	let div1;
     	let div0;
+    	let h5;
     	let t0;
-    	let h60;
-    	let t1_value = /*certificate*/ ctx[5].institution + "";
     	let t1;
+    	let h60;
+    	let t2_value = /*certificate*/ ctx[5].institution + "";
     	let t2;
-    	let h61;
-    	let t3_value = /*certificate*/ ctx[5].subtitle + "";
     	let t3;
+    	let h61;
+    	let t4_value = /*certificate*/ ctx[5].subtitle + "";
     	let t4;
-    	let p;
-    	let t5_value = /*certificate*/ ctx[5].desc + "";
     	let t5;
+    	let p;
+    	let t6_value = /*certificate*/ ctx[5].desc + "";
     	let t6;
+    	let t7;
 
     	function select_block_type(ctx, dirty) {
+    		if (/*certificate*/ ctx[5].type == 'award') return create_if_block_1;
+    		if (/*certificate*/ ctx[5].type == 'degree') return create_if_block_2;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block0 = current_block_type && current_block_type(ctx);
+
+    	function select_block_type_1(ctx, dirty) {
     		if (/*windowWidth*/ ctx[0] > 640) return create_if_block;
     		return create_else_block;
     	}
 
-    	let current_block_type = select_block_type(ctx);
-    	let if_block = current_block_type(ctx);
+    	let current_block_type_1 = select_block_type_1(ctx);
+    	let if_block1 = current_block_type_1(ctx);
 
     	return {
     		c() {
     			div1 = element("div");
     			div0 = element("div");
-    			if_block.c();
+    			h5 = element("h5");
+    			if (if_block0) if_block0.c();
     			t0 = space();
+    			if_block1.c();
+    			t1 = space();
     			h60 = element("h6");
-    			t1 = text(t1_value);
-    			t2 = space();
+    			t2 = text(t2_value);
+    			t3 = space();
     			h61 = element("h6");
-    			t3 = text(t3_value);
-    			t4 = space();
+    			t4 = text(t4_value);
+    			t5 = space();
     			p = element("p");
-    			t5 = text(t5_value);
-    			t6 = space();
+    			t6 = text(t6_value);
+    			t7 = space();
+    			attr(h5, "class", "card-title svelte-ep14h");
     			attr(h60, "class", "card-subtitle mb-2");
     			attr(h61, "class", "card-subtitle mb-2 text-muted");
     			attr(p, "class", "card-text");
-    			attr(div0, "class", "card-body svelte-1iom95z");
-    			attr(div1, "class", "col-sm card svelte-1iom95z");
+    			attr(div0, "class", "card-body svelte-ep14h");
+    			attr(div1, "class", "col-sm card svelte-ep14h");
     		},
     		m(target, anchor) {
     			insert(target, div1, anchor);
     			append(div1, div0);
-    			if_block.m(div0, null);
-    			append(div0, t0);
+    			append(div0, h5);
+    			if (if_block0) if_block0.m(h5, null);
+    			append(h5, t0);
+    			if_block1.m(h5, null);
+    			append(div0, t1);
     			append(div0, h60);
-    			append(h60, t1);
-    			append(div0, t2);
+    			append(h60, t2);
+    			append(div0, t3);
     			append(div0, h61);
-    			append(h61, t3);
-    			append(div0, t4);
+    			append(h61, t4);
+    			append(div0, t5);
     			append(div0, p);
-    			append(p, t5);
-    			append(div1, t6);
+    			append(p, t6);
+    			append(div1, t7);
     		},
     		p(ctx, dirty) {
-    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
-    				if_block.p(ctx, dirty);
-    			} else {
-    				if_block.d(1);
-    				if_block = current_block_type(ctx);
+    			if (if_block0) if_block0.p(ctx, dirty);
 
-    				if (if_block) {
-    					if_block.c();
-    					if_block.m(div0, t0);
+    			if (current_block_type_1 === (current_block_type_1 = select_block_type_1(ctx)) && if_block1) {
+    				if_block1.p(ctx, dirty);
+    			} else {
+    				if_block1.d(1);
+    				if_block1 = current_block_type_1(ctx);
+
+    				if (if_block1) {
+    					if_block1.c();
+    					if_block1.m(h5, null);
     				}
     			}
     		},
     		d(detaching) {
     			if (detaching) detach(div1);
-    			if_block.d();
+
+    			if (if_block0) {
+    				if_block0.d();
+    			}
+
+    			if_block1.d();
     		}
     	};
     }
@@ -1946,8 +1884,8 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr(h1, "class", "mb-4 svelte-1iom95z");
-    			attr(div0, "class", "row gap-2");
+    			attr(h1, "class", "mb-4 svelte-ep14h");
+    			attr(div0, "class", "row gap-2 justify-content-center");
     			attr(div1, "class", "container pb-5");
     			attr(div1, "id", "education");
     		},
@@ -1967,7 +1905,7 @@ var app = (function () {
     			}
     		},
     		p(ctx, [dirty]) {
-    			if (dirty & /*certificates, award, degree, windowWidth*/ 15) {
+    			if (dirty & /*certificates, windowWidth, award, degree*/ 15) {
     				each_value = /*certificates*/ ctx[1];
     				let i;
 
