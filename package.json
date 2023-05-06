@@ -18,7 +18,7 @@
   "scripts": {
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
-    "dev": "run-p start:dev autobuild",
+    "dev": "PORT=5000 run-p start:dev autobuild",
     "start": "sirv",
     "start:dev": "sirv --dev"
   },

@@ -40,7 +40,7 @@
       institution: "College of Western Idaho",
       subtitle: "Boise, Idaho, 2021 - 2023",
       desc:
-        "I am working towards an associate's in software development which includes the study of C#, ASP.NET, Javascript, JS Frameworks, PHP, SQL and more."
+        "I earned an A.S in software development which covered a wide range of technologies such as C# and .NET, ASP.NET, PHP, SQL, React-Native, Javascript, HTML/CSS, and more. With a large portion of the program focusing on full-stack development and the integration of the aforementioned technologies in project based courses."
     },
     {
       type: "degree",
@@ -49,7 +49,7 @@
       institution: "Boise State University",
       subtitle: "Boise, Idaho, 2014 - 2018",
       desc:
-        "I received an associate's of science degree from Boise State University in the summer of 2018, with a course study focus on Biology."
+        "I began pursuing a Bachelor's in Biology at BSU before pivoting and receiving an Associate of Applied Science."
     }
   ];
   let award = `
