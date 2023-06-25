@@ -44,7 +44,7 @@
   }
   .card-body {
     background: linear-gradient(to top, black, transparent);
-    margin-top: -10rem;
+    margin-top: -15rem;
   }
   .card-title {
     font-family: "Roboto Condensed", sans-serif;
