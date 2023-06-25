@@ -54,7 +54,7 @@
       <div class="col">
         <img src={profilePic} class="img img-fluid profile rounded-circle" alt="profile">
         <h1>William Beukelman</h1>
-        <h5>Aspiring Software Developer</h5>
+        <h5>Software Developer</h5>
       </div>
     </div>
     <div class="row py-2 pb-4">
@@ -72,8 +72,8 @@
     </div>
     <div class="row">
     <h5 class="pb-3">About Me</h5>
-    <p class="border-left text-start mx-3">Lifelong interest in all things science, engineering, and computers.
-      I am currently pursuing a degree in software development.</p>
+    <p class="border-left text-start mx-3">Lifelong interest in all things science, engineering, and computers. I recently completed a 
+      degree in software development and am looking to expand my programming skillset and put my knowledge into practice in industry.</p>
     </div>
   </div>
   <!--

@@ -15,7 +15,9 @@
   <div class="col-3"><h2>About Me</h2></div>
   <div class="col-5 text-left">
       Lifelong interest in all things science, engineering, and computers.
-      I am currently pursuing a degree in software development.
+      I recently completed a degree in software development and am looking 
+      to expand my programming skillset and put my knowledge into practice 
+      in industry.
   </div>
 </div>
 

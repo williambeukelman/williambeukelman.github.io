@@ -50,7 +50,7 @@ const projectData = [
     title: "Stellar Explorers Game",
     desc: "Final for game development class, a 3D real-time strategy space exploration game built entirely from stratch using Unity game engine.",
     demo: "https://play.unity.com/mg/other/build-km4",
-    code: "",
+    code: "https://github.com/williambeukelman/stellar-explorers",
     image: "public/screenshots/screenshot_stellar_explorers.png",
     badges: ["Csharp", "Unity"]
   },
